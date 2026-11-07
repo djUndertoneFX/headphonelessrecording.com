@@ -1,0 +1,9 @@
+{
+  "name": "headphonelessrecording",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Landing page and waitlist for Headphoneless — record with your speakers on.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
