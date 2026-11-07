@@ -3,117 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Headphoneless — record with your speakers on</title>
-<meta name="description" content="Sing and play with your monitors up, the way it feels in the room. Headphoneless removes the speaker sound from your mic track, so the take is just you.">
-<meta property="og:title" content="Headphoneless — record with your speakers on">
-<meta property="og:description" content="Track vocals and instruments without headphones. The speaker bleed comes out; your performance stays.">
-<meta property="og:url" content="https://headphonelessrecording.com/">
+<title>headphonelessrecording.com</title>
+<meta name="description" content="Upload a track and record a new part over it with your speakers on. The track is removed from your mic as it plays, so you never need headphones. Coming soon.">
+<meta property="og:title" content="headphonelessrecording.com">
 <meta name="theme-color" content="#E6EAED">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<style>
+  body { min-height: 100svh; display: grid; grid-template-rows: 1fr auto; }
+  .splash { display: grid; align-content: center; justify-items: center; text-align: center; padding: 2rem 1rem; gap: 1.5rem; }
+  .splash h1 { font-size: clamp(1.9rem, 7.2vw, 6.2rem); letter-spacing: -.03em; overflow-wrap: anywhere; }
+  .splash h1 .tld { font-weight: 300; }
+  .splash canvas { width: min(56rem, 100%); height: 120px; display: block; }
+  .splash p { margin: 0; color: var(--slate); font-size: clamp(1.05rem, 1.8vw, 1.3rem); max-width: 32ch; }
+  .splash .links { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+  .splash .submit, .splash .top-cta { text-decoration: none; display: inline-block; }
+  .splash .top-cta { padding: .8rem 1.4rem; font-size: 1.05rem; }
+  .foot { justify-content: center; }
+</style>
 </head>
 <body>
-<a class="skip" href="#join">Skip to the waitlist</a>
-
-<header class="top">
-  <a class="brand" href="/" aria-label="Headphoneless home">
-    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16c3-7 6-7 8 0s5 7 8 0 6-7 8 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M7 25 25 7" stroke="var(--voice)" stroke-width="3" stroke-linecap="round"/></svg>
-    Headphoneless
-  </a>
-  <a class="top-cta" href="#join">Join the waitlist</a>
-</header>
-
-<main>
-  <section class="hero" aria-labelledby="hero-title">
-    <h1 id="hero-title"><span class="line">Take the headphones off.</span> <span class="line">Keep the take.</span></h1>
-    <p class="lede">Sing and play with your monitors up, the way it feels in the room. Headphoneless removes the speaker sound your mic picks up, so the recording is just you.</p>
-
-    <figure class="scope" aria-label="Demo: what the microphone records, before and after the speaker bleed is cancelled">
-      <div class="scope-head">
-        <div class="legend">
-          <span class="key voice">Your voice</span>
-          <span class="key bleed">Speakers in the mic</span>
-        </div>
-        <button class="switch" id="cancel" type="button" role="switch" aria-checked="false">
-          <span class="track" aria-hidden="true"><span class="thumb"></span></span>
-          <span class="switch-label">Cancel the bleed</span>
-        </button>
-      </div>
-      <canvas id="wave" height="220" aria-hidden="true"></canvas>
-      <figcaption id="wave-caption">What the mic records with your speakers on: your voice, tangled up with the backing track.</figcaption>
-    </figure>
-  </section>
-
-  <section class="how" aria-labelledby="how-title">
-    <h2 id="how-title">How it works</h2>
-    <ol class="steps">
-      <li>
-        <h3>Play your track through the speakers</h3>
-        <p>Set your monitors at a level you'd actually enjoy. Headphoneless listens to exactly what's going out to them.</p>
-      </li>
-      <li>
-        <h3>Record like you're on stage</h3>
-        <p>Stand where it sounds good, hear yourself in the room, and perform. Your mic picks up both you and the speakers, and that's fine.</p>
-      </li>
-      <li>
-        <h3>Get a clean take</h3>
-        <p>It works out how the speaker sound reached your mic and subtracts it, leaving your voice or instrument on its own, ready to mix.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="why" aria-labelledby="why-title">
-    <h2 id="why-title">Why lose the headphones</h2>
-    <dl class="reasons">
-      <div><dt>You sing in tune</dt><dd>Hearing your own voice in the air, not squashed into your ears, makes pitch easier to hold.</dd></div>
-      <div><dt>It feels like a performance</dt><dd>No cable, no clamp on your head, no sweat. Move the way you would in front of people.</dd></div>
-      <div><dt>No click leaking into quiet parts</dt><dd>Headphones bleed too, and that bleed is hard to remove. Speaker sound is something Headphoneless knows exactly, so it can come out.</dd></div>
-      <div><dt>Everyone hears the same mix</dt><dd>Track a full band or a choir in one room without a headphone amp for each person.</dd></div>
-    </dl>
-  </section>
-
-  <section class="join" id="join" aria-labelledby="join-title">
-    <div class="join-copy">
-      <h2 id="join-title">Be first to try it</h2>
-      <p>Headphoneless is in development. Join the waitlist and we'll email you when the beta opens. Nothing else.</p>
-    </div>
-    <form class="form" id="form" novalidate>
-      <label class="field">
-        <span>Email</span>
-        <input type="email" name="email" id="email" autocomplete="email" placeholder="you@example.com" required>
-      </label>
-      <div class="row">
-        <label class="field">
-          <span>What do you record most?</span>
-          <select name="use">
-            <option value="">Choose one (optional)</option>
-            <option>Vocals</option>
-            <option>Acoustic instruments</option>
-            <option>Guitar or bass amps</option>
-            <option>A whole band in one room</option>
-            <option>Podcasts or voiceover</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>Your recording software</span>
-          <input type="text" name="daw" maxlength="60" placeholder="Logic, Ableton, Pro Tools… (optional)">
-        </label>
-      </div>
-      <label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-      <button class="submit" type="submit">Join the waitlist</button>
-      <p class="status" id="status" role="status" aria-live="polite"></p>
-    </form>
-  </section>
+<main class="splash">
+  <h1>headphonelessrecording<span class="tld">.com</span></h1>
+  <canvas id="line" height="120" aria-hidden="true"></canvas>
+  <p>Upload a track. Record over it with your speakers on. No headphones. Coming soon.</p>
+  <div class="links">
+    <a class="submit" href="/about.html#join">Join the waitlist</a>
+    <a class="top-cta" href="/about.html">What is it?</a>
+  </div>
 </main>
-
-<footer class="foot">
-  <span>© <span id="year">2026</span> Headphoneless</span>
-  <a href="mailto:hello@headphonelessrecording.com">hello@headphonelessrecording.com</a>
-</footer>
-
-<script src="/app.js" defer></script>
+<footer class="foot"><span>© <span id="year">2026</span> Headphoneless</span></footer>
+<script>
+(() => {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const c = document.getElementById('line'), reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hash = (n) => { const v = Math.sin(n * 127.1 + 311.7) * 43758.5453; return v - Math.floor(v); };
+  const voice = (x) => { const pos = x * 0.75, n = Math.floor(pos), u = pos - n; if (hash(n) < 0.22) return 0;
+    const env = Math.sin(Math.PI * u) ** 0.7 * (0.55 + 0.45 * hash(n + 7)), f = 15 + 9 * hash(n + 3) + 0.6 * Math.sin(x * 5.5);
+    return env * (Math.sin(x * f) + 0.4 * Math.sin(x * f * 2 + 1) + 0.15 * Math.sin(x * f * 3 + 2)) * 0.8; };
+  let t = 0;
+  const draw = () => {
+    const dpr = Math.min(2, devicePixelRatio || 1), w = c.clientWidth, h = c.clientHeight;
+    if (c.width !== Math.round(w * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
+    const g = c.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+    g.beginPath();
+    for (let px = 0; px <= w; px += 2) {
+      const edge = Math.min(1, px / (w * 0.12), (w - px) / (w * 0.12));   // fade in and out at the ends
+      const y = h / 2 - voice(t + px / w * 12) * h * 0.38 * edge; px ? g.lineTo(px, y) : g.moveTo(px, y);
+    }
+    g.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--voice').trim(); g.lineWidth = 2.5; g.lineJoin = 'round'; g.stroke();
+  };
+  const loop = () => { t += 0.01; draw(); requestAnimationFrame(loop); };
+  reduce ? draw() : loop();
+  addEventListener('resize', draw);
+})();
+</script>
 </body>
 </html>
